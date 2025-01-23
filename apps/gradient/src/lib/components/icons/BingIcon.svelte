@@ -1,0 +1,14 @@
+<script lang="ts">
+	type Props = {
+		fill?: string;
+		class?: string;
+	};
+
+	let { fill = '#000', class: className }: Props = $props();
+</script>
+
+<svg class={className} {fill} viewBox="-3.5 0 24 24" xmlns="http://www.w3.org/2000/svg"
+	><path
+		d="m0 0 4.795 1.686v16.874l6.753-3.9-3.31-1.555-2.09-5.2 10.64 3.738v5.435l-11.993 6.922-4.8-2.67v-21.33z"
+	/></svg
+>
