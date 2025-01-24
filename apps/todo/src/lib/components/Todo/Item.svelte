@@ -2,7 +2,6 @@
 	import { send, receive } from '@repo/ui';
 	import { SmileIcon, SmileNeutralIcon } from '$lib/components/icons';
 	import { twFullConfig } from '$lib/twFullConfig';
-	import { flip } from 'svelte/animate';
 
 	type Props = {
 		completed: boolean;
@@ -23,7 +22,7 @@
 	out:send={{ key: id }}
 	onclick={() => onclick?.(id, !completed)}
 >
-	<div class="">{text}</div>
+	<div class="max-w-[90%] text-left">{text}</div>
 	{#if completed}
 		<SmileIcon fill={twFullConfig.theme.colors.green['500']} />
 	{:else}

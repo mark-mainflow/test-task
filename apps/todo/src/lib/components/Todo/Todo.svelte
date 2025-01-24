@@ -37,6 +37,13 @@
 
 		currentTodo.completed = completed;
 	};
+
+	const onKeyEvent = (e: KeyboardEvent) => {
+		if (e.key !== 'Enter') return;
+
+		addTodo(inputValue);
+		inputValue = '';
+	};
 </script>
 
 <div class="relative w-[clamp(320px,100%,400px)] bg-white py-8 shadow-md">
@@ -54,7 +61,13 @@
 	<div class="px-5">
 		<List todos={sortedTodos} class="mb-4" {onTodoChange} />
 
-		<Input class="w-full" placeholder="Add Task" bind:value={inputValue} {error} />
+		<Input
+			class="w-full"
+			placeholder="Add Task"
+			bind:value={inputValue}
+			{error}
+			onkeydown={onKeyEvent}
+		/>
 
 		<Button
 			class="max- absolute bottom-0 left-0 right-0 mx-auto w-min translate-y-1/2"
